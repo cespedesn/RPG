@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Weapon.cs" />
+    <Compile Include="Quest.cs" />
+    <Compile Include="Monster.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="HealingPotion.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
