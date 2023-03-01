@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    internal class HealingPotion
+    //Creating base class for HealingPotion and Weapon since they both
+    //have the same properties as the Item class.
+    //Now a child class of Item.
+    public class HealingPotion : Item
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string NamePlural { get; set; }
+      
         public int AmountToHeal { get; set; }
 
     }
