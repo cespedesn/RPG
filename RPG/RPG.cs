@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace RPG
 {
     public partial class RPG : Form
     {
+        private Player _player;
+
+        //Constructor
         public RPG()
         {
             InitializeComponent();
+
+            //Assign values to properties of _player obj
+            _player = new Player();
+            _player.CurrentHitPoints = 10;
+            _player.MaximumHitPoints = 10;
+            _player.Gold = 20;
+            _player.ExperiencePoints = 0;
+            _player.Level = 1;
+
+            //Assign values of properties from _player to text of labels on screen
+            //Have to convert to string since point system is in integers
+            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
+            lblGold.Text = _player.Gold.ToString();
+            lblExperience.Text = _player.ExperiencePoints.ToString();
+            lblLevel.Text = _player.Level.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,9 +51,7 @@ namespace RPG
 
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            lblGold.Text = "123";
-        }
+       
     }
 }
+
