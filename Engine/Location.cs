@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    internal class Location
+    public class Location
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        //Constructor code
+        public Location(int id, string name, string description)
+        {
+            ID = id;
+            Name = name;
+            Description = description;
+        }
+
 
     }
 }
