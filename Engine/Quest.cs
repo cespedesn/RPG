@@ -15,6 +15,8 @@ namespace Engine
         public int RewardGold { get; set; }
 
         public Item RewardItem { get; set; }
+        //Lists are null or non-existent until you set them to an empty list
+        public List<QuestCompletionItem> QuestCompletionItems { get; set; }
 
         public Quest(int id, string name, string description, int rewardExperiencePoints, int rewardGold)
         {
@@ -23,6 +25,7 @@ namespace Engine
             Description = description;
             RewardExperiencePoints = rewardExperiencePoints;
             RewardGold = rewardGold;
+            QuestCompletionItems = new List<QuestCompletionItem>();
         }
     }
 }
