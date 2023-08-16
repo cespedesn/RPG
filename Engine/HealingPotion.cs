@@ -17,5 +17,7 @@ namespace Engine
             AmountToHeal = AmountToHeal;
         }
         public int AmountToHeal { get; set; }
-        
+
+
+    }
 }

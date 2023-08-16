@@ -16,8 +16,10 @@ namespace Engine
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
+        //Constructor
         public Player(int currentHitPoints, int maximumHitPoints, int gold, int experiencePoints, int level) : base(currentHitPoints, maximumHitPoints)
         {
+            //Initialize Fields
             Gold = gold;
             ExperiencePoints = experiencePoints;
             Level = level;
