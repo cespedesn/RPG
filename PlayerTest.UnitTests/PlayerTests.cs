@@ -11,7 +11,7 @@ namespace PlayerTest.UnitTests
         public void Constructor_InitializesProperties()
         {
 
-            //Arange. Where we initialize our objects
+            //Arange. Where we initialize
             int currentHitPoints = 100;
             int maximumHitPoints = 100;
             int gold = 50;
