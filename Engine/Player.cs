@@ -24,6 +24,8 @@ namespace Engine
             ExperiencePoints = experiencePoints;
             Level = level;
             //Set value of new properties to empty lists. 
+            //By setting these two to an empty list, you can add items to them later.
+            //Being that lists were null/nothing, now you can add items later 
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();
         }

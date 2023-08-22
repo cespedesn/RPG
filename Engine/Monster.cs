@@ -23,6 +23,9 @@ namespace Engine
             MaximumDamage = maximumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
             RewardGold = rewardGold;
+            //Set value of new property to empty list. 
+            //By setting to an empty list, you can add item to it later.
+            //Being that list is null/nothing, now you can add items later 
             LootTable = new List<LootItem>();
         }
     }
