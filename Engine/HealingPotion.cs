@@ -14,7 +14,7 @@ namespace Engine
         //base takes the values from the parameters in the HealingPotion constructor and passes the on to the constructor of the Item class. This is how to get parameters into the base class when instantiating a derived class
         public HealingPotion(int id, string name, string namePlural, int amountToHeal) : base(id, name, namePlural)
         {
-            AmountToHeal = AmountToHeal;
+            AmountToHeal = amountToHeal;
         }
         public int AmountToHeal { get; set; }
 
