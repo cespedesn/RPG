@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealingPotionTest.UnitTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeaponTest.UnitTests", "WeaponTest.UnitTests\WeaponTest.UnitTests.csproj", "{E7312CF3-7B32-48CA-AFF9-F0C6058820B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerQuestTest.UnitTests", "PlayerQuestTest.UnitTests\PlayerQuestTest.UnitTests.csproj", "{70ACBC1B-8A33-4774-B4E6-196694435469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{E7312CF3-7B32-48CA-AFF9-F0C6058820B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7312CF3-7B32-48CA-AFF9-F0C6058820B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7312CF3-7B32-48CA-AFF9-F0C6058820B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70ACBC1B-8A33-4774-B4E6-196694435469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70ACBC1B-8A33-4774-B4E6-196694435469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70ACBC1B-8A33-4774-B4E6-196694435469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70ACBC1B-8A33-4774-B4E6-196694435469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
