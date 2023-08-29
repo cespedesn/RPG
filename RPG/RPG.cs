@@ -133,6 +133,25 @@ namespace RPG
                     return;
                 }
             }
+
+            // Update the player's current location
+            _player.CurrentLocation = newLocation;
+
+            // Show/hide available movement buttons
+            btnNorth.Visible = (newLocation.LocationToNorth != null);
+            btnEast.Visible = (newLocation.LocationToEast != null);
+            btnSouth.Visible = (newLocation.LocationToSouth != null);
+            btnWest.Visible = (newLocation.LocationToWest != null);
+
+            // Display current location name and description
+            rtbLocation.Text = newLocation.Name + Environment.NewLine;
+            rtbLocation.Text += newLocation.Description + Environment.NewLine;
+
+            // Completely heal the player
+            _player.CurrentHitPoints = _player.MaximumHitPoints;
+
+            // Update Hit Points in UI
+            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
         }
     }
 }
