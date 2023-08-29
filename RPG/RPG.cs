@@ -14,6 +14,7 @@ namespace RPG
     public partial class RPG : Form
     {
         private Player _player;
+        private Monster _currentMonster;
 
         //Constructor
         public RPG()
@@ -29,12 +30,9 @@ namespace RPG
 
             //Assign values to properties of _player obj
             _player = new Player(10, 10, 20, 0, 1);
-            //_player.CurrentHitPoints = 10;
-            //_player.MaximumHitPoints = 10;
-            //_player.Gold = 20;
-            //_player.ExperiencePoints = 0;
-            //_player.Level = 1;
-            
+            MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+            _player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD, 1)));
+
             //Assign values of properties from _player to text of labels
             //on screen
             //Have to convert to string since point system is in integers
@@ -44,7 +42,7 @@ namespace RPG
             lblLevel.Text = _player.Level.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        /*private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -77,6 +75,64 @@ namespace RPG
         private void btnWest_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUseWeapon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbLocation_TextChanged(object sender, EventArgs e)
+        {
+
+        }*/
+
+        private void btnNorth_Click(object sender, EventArgs e)
+        {
+            MoveTo(_player.CurrentLocation.LocationToNorth);
+        }
+
+        private void btnEast_Click(object sender, EventArgs e)
+        {
+            MoveTo(_player.CurrentLocation.LocationToEast);
+        }
+
+        private void btnSouth_Click(object sender, EventArgs e)
+        {
+            MoveTo(_player.CurrentLocation.LocationToSouth);
+        }
+
+        private void btnWest_Click(object sender, EventArgs e)
+        {
+            MoveTo(_player.CurrentLocation.LocationToWest);
+        }
+
+        //MoveTo Functionality
+        private void MoveTo(Location newLocation)
+        {
+            //Does location have any required items?
+            if (newLocation.ItemRequiredToEnter != null)
+            {
+                // See if player has the required item in their inventory
+                bool playerHasRequiredItem = false;
+
+                foreach (InventoryItem ii in _player.Inventory)
+                {
+                    if (ii.Details.ID == newLocation.ItemRequiredToEnter.ID)
+                    {
+                        //found the required item
+                        playerHasRequiredItem = true;
+                        break; // Exit out of the foreach loop
+                    }
+                }
+
+                if (!playerHasRequiredItem)
+                {
+                    //didn't find the required item in their inventory, so display a message and stop trying to move
+                    rtbMessages.Text += "You must have a " + newLocation.ItemRequiredToEnter.Name + " to enter this location." + Environment.NewLine;
+                    return;
+                }
+            }
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Engine
         public int Gold { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
+        public Location CurrentLocation { get; set; }
+
         //Lists are null or non-existent until you set them to an empty list
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }

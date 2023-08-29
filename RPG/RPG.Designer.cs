@@ -152,6 +152,7 @@
             this.btnUseWeapon.TabIndex = 11;
             this.btnUseWeapon.Text = "Use";
             this.btnUseWeapon.UseVisualStyleBackColor = true;
+            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
             // 
             // btnUsePotion
             // 
@@ -210,6 +211,7 @@
             this.rtbLocation.Size = new System.Drawing.Size(360, 105);
             this.rtbLocation.TabIndex = 17;
             this.rtbLocation.Text = "";
+            this.rtbLocation.TextChanged += new System.EventHandler(this.rtbLocation_TextChanged);
             // 
             // rtbMessages
             // 
