@@ -11,7 +11,7 @@ namespace Engine
         //Static list variables.
         //They work similar to properties in a class.
         //This populates them with all things in game world.
-        //Then read from thme in rest of program.
+        //Then read from them in rest of program.
         public static readonly List<Item> Items = new List<Item>();
         public static readonly List<Monster> Monsters = new List<Monster>();
         public static readonly List<Quest> Quests = new List<Quest>();
@@ -52,8 +52,8 @@ namespace Engine
         //But with statis classes, the constructor code is ran the first time
         //someone uses anything in the class. 
 
-        //So, when we start the game and want to display information about the
-        //player’s current location, and we try to get that data from the World
+        //So, when I start the game and want to display information about the
+        //player’s current location, and I try to get that data from the World
         //class, the constructor method will be run, and the lists will get
         //populated.
         static World()
@@ -67,6 +67,7 @@ namespace Engine
 
         //Methods to create game objects and add them to the static lists.
         //Item.Add() gets added to the Items list and it is done inline.
+        //If you want to run a method without instantiating an object from the class then the method needs to be static like so. Being that it is in a static class static needs to be included here.  
         private static void PopulateItems()
         {
             Items.Add(new Weapon(ITEM_ID_RUSTY_SWORD, "Rusty sword", "Rusty swords", 0, 5));
@@ -193,10 +194,12 @@ namespace Engine
             Locations.Add(bridge);
             Locations.Add(spiderField);
         }
-        //Looks at each item in the list and sees if the ID we passed in matches
-        //the ID of the object. If so, it returns the object to us. If not, returns null
+        //Looks at each item in the list and sees if the ID I passed in matches
+        //the ID of the object. If so, it returns the object to me. If not, returns null
+        
         public static Item ItemByID(int id)
         {
+            //foreach(DataType variableName in listName)
             foreach (Item item in Items)
             {
                 if (item.ID == id)
@@ -210,6 +213,7 @@ namespace Engine
 
         public static Monster MonsterByID(int id)
         {
+            //foreach(DataType variableName in listName)
             foreach (Monster monster in Monsters)
             {
                 if (monster.ID == id)
@@ -223,6 +227,7 @@ namespace Engine
 
         public static Quest QuestByID(int id)
         {
+            //foreach(DataType variableName in listName)
             foreach (Quest quest in Quests)
             {
                 if (quest.ID == id)
@@ -236,6 +241,7 @@ namespace Engine
 
         public static Location LocationByID(int id)
         {
+            //foreach(DataType variableName in listName)
             foreach (Location location in Locations)
             {
                 if (location.ID == id)
